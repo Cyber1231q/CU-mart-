@@ -1,0 +1,8 @@
+# INTENTIONAL VULN (VA coursework — Sensitive Data Exposure, OWASP A01:2021 / A05:2021)
+# Accidentally-deployed backup config file, publicly reachable at /config.bak on the live site.
+# Detected by ZAP's Forced Browse / DirBuster-style wordlist scans, or manual path guessing.
+# All values below are fake placeholders — not real credentials.
+DB_HOST=localhost
+DB_USER=admin
+DB_PASSWORD=demo_password_123
+API_KEY=demo_api_key_do_not_use

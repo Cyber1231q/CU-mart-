@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CU Mart — Caleb University's Campus Supermarket</title>
+<meta name="description" content="CU Mart is Caleb University's on-campus supermarket — provisions, fresh produce, snacks, drinks and essentials, steps from your hostel, with a student discount card.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- TODO: remove before real launch — staging admin password is still admin123, same as the DB backup creds -->
+<!-- INTENTIONAL VULN (VA coursework — Information Disclosure, OWASP A05:2021 Security Misconfiguration): suspicious comment, flagged by ZAP passive rule 10027 -->
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo" aria-label="CU Mart home">
+      <span class="logo-mark">CU</span>
+      <span class="logo-text">Mart<em>.</em></span>
+    </a>
+
+    <nav class="nav" id="primaryNav" aria-label="Primary">
+      <a href="#categories">Categories</a>
+      <a href="#deals">Deals</a>
+      <a href="#card">Student Card</a>
+      <a href="#voices">Voices</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+
+    <div class="header-cta">
+      <span class="open-pill" id="openPill" aria-live="polite">
+        <span class="dot" id="openDot"></span> <span id="openText">Checking hours…</span>
+      </span>
+      <a href="#visit" class="btn btn-primary btn-sm">Get Directions</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="hero-media" aria-hidden="true">
+      <img src="images/hero.jpg" alt="">
+      <div class="hero-scrim"></div>
+    </div>
+
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Beside the Caleb University gate, Imota</p>
+      <h1 class="hero-title">
+        Everything your <span class="hl">hostel shelf</span><br>
+        is missing, sold here.
+      </h1>
+      <p class="hero-sub">
+        Provisions, fresh produce, snacks, drinks and exam-season essentials —
+        priced for students, restocked weekly, and a two-minute walk from campus.
+      </p>
+      <div class="hero-actions">
+        <a href="#categories" class="btn btn-primary">Browse what we stock</a>
+        <a href="#card" class="btn btn-ghost">Get the student discount</a>
+      </div>
+
+      <dl class="hero-stats">
+        <div><dt>10%</dt><dd>off with your Caleb ID</dd></div>
+        <div><dt>2 min</dt><dd>walk from the gate</dd></div>
+        <div><dt>7am–10pm</dt><dd>every single day</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>NEW STOCK EVERY MONDAY</span><span>•</span>
+      <span>PACK-N-SAVE BUNDLES</span><span>•</span>
+      <span>TRANSFER &amp; POS ACCEPTED</span><span>•</span>
+      <span>EXAM WEEK SNACK PACKS</span><span>•</span>
+      <span>10% OFF WITH YOUR CALEB ID</span><span>•</span>
+      <span>NEW STOCK EVERY MONDAY</span><span>•</span>
+      <span>PACK-N-SAVE BUNDLES</span><span>•</span>
+      <span>TRANSFER &amp; POS ACCEPTED</span><span>•</span>
+      <span>EXAM WEEK SNACK PACKS</span><span>•</span>
+      <span>10% OFF WITH YOUR CALEB ID</span><span>•</span>
+    </div>
+  </div>
+
+  <!-- ================= CATEGORIES ================= -->
+  <section class="section" id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">What's on the shelf</p>
+        <h2>Stocked for hostel life, not a hypermarket.</h2>
+        <p class="section-lede">Six aisles, no wasted space — everything picked because students actually buy it.</p>
+      </div>
+
+      <div class="cat-grid">
+        <article class="cat-card cat-card--photo">
+          <img src="images/produce.jpg" alt="Crates of fresh fruit and vegetables at a market stall">
+          <div class="cat-card-body">
+            <h3>Fresh Produce</h3>
+            <p>Tomatoes, pepper, onions, plantain and fruit, restocked twice a week so it never sits.</p>
+          </div>
+        </article>
+
+        <article class="cat-card cat-card--photo">
+          <img src="images/snacks.jpg" alt="Colorful wall of snack and chip packets on shelves">
+          <div class="cat-card-body">
+            <h3>Snacks &amp; Cravings</h3>
+            <p>Chips, biscuits, indomie, gala — the 11pm-reading-session survival kit.</p>
+          </div>
+        </article>
+
+        <article class="cat-card cat-card--photo">
+          <img src="images/drinks.jpg" alt="Chilled drinks and dairy lined up in a refrigerator">
+          <div class="cat-card-body">
+            <h3>Drinks &amp; Dairy</h3>
+            <p>Cold zobo, soft drinks, yoghurt and milk kept properly chilled, always.</p>
+          </div>
+        </article>
+
+        <article class="cat-card cat-card--icon">
+          <div class="cat-icon" aria-hidden="true">🧴</div>
+          <h3>Toiletries &amp; Care</h3>
+          <p>Soap, sanitary products, toothpaste, deodorant — the stuff you forget until you need it now.</p>
+        </article>
+
+        <article class="cat-card cat-card--icon">
+          <div class="cat-icon" aria-hidden="true">🍚</div>
+          <h3>Provisions &amp; Pantry</h3>
+          <p>Rice, spaghetti, seasoning cubes, oil — small-format packs sized for one shelf, not one family.</p>
+        </article>
+
+        <article class="cat-card cat-card--icon">
+          <div class="cat-icon" aria-hidden="true">✏️</div>
+          <h3>Exam-Week Essentials</h3>
+          <p>Biros, foolscap sheets, energy drinks and coffee sachets, stocked up before every exam period.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEALS ================= -->
+  <section class="section section--tint" id="deals">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">This week's board</p>
+        <h2>Deals worth the walk over.</h2>
+      </div>
+
+      <div class="deal-board">
+        <div class="deal-card">
+          <span class="deal-tag">Bundle</span>
+          <h3>Roommate Pack</h3>
+          <p>2 indomie packs + 1 sachet water + 1 gala</p>
+          <div class="deal-price"><span class="was">₦1,200</span><span class="now">₦950</span></div>
+        </div>
+        <div class="deal-card">
+          <span class="deal-tag">Exam Week</span>
+          <h3>All-Nighter Kit</h3>
+          <p>Coffee sachet + biscuit pack + energy drink</p>
+          <div class="deal-price"><span class="was">₦1,800</span><span class="now">₦1,450</span></div>
+        </div>
+        <div class="deal-card">
+          <span class="deal-tag">Fresh</span>
+          <h3>Sunday Stew Set</h3>
+          <p>Tomato, pepper, onion and seasoning bundle</p>
+          <div class="deal-price"><span class="was">₦2,500</span><span class="now">₦2,000</span></div>
+        </div>
+        <div class="deal-card">
+          <span class="deal-tag">New in</span>
+          <h3>Cold Zobo, 1L</h3>
+          <p>Chilled and ready, brewed locally</p>
+          <div class="deal-price"><span class="now">₦700</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STUDENT CARD (signature) ================= -->
+  <section class="section card-section" id="card">
+    <div class="wrap card-section-inner">
+      <div class="card-copy">
+        <p class="kicker">The one thing to carry</p>
+        <h2>Your Caleb ID is basically a discount card.</h2>
+        <p class="section-lede">
+          Flash it at the till for 10% off every visit — no app, no sign-up, no points to
+          forget. It works from your very first day on campus to your very last.
+        </p>
+        <ul class="card-facts">
+          <li>10% off storewide, every time</li>
+          <li>Stacks with weekly bundle deals</li>
+          <li>Works for new and returning students alike</li>
+        </ul>
+      </div>
+
+      <div class="id-card" role="img" aria-label="CU Mart student discount card, ten percent off with your Caleb University ID">
+        <div class="id-card-top">
+          <span class="id-card-brand">CU MART</span>
+          <span class="id-card-chip" aria-hidden="true"></span>
+        </div>
+        <div class="id-card-mid">
+          <span class="id-card-percent">10%</span>
+          <span class="id-card-off">OFF</span>
+        </div>
+        <div class="id-card-bottom">
+          <span>SHOW YOUR CALEB ID AT THE TILL</span>
+          <span class="id-card-barcode" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY / TRUST ================= -->
+  <section class="section" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Why students stick with us</p>
+        <h2>Built around your timetable, not ours.</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>Open when you actually shop</h3>
+          <p>7am to 10pm daily, including the nights before a test when everyone's out of noodles.</p>
+        </div>
+        <div class="why-item">
+          <h3>Transfer, POS or cash</h3>
+          <p>No queue drama over "network issues" — every till takes transfer and card.</p>
+        </div>
+        <div class="why-item">
+          <h3>Sized for one person</h3>
+          <p>Small-format packs so you're not storing a 25kg rice bag under your bed.</p>
+        </div>
+        <div class="why-item">
+          <h3>Hostel-friendly delivery</h3>
+          <p>Order ahead and a bag will be waiting at the mart for pickup between classes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="section voices-section" id="voices">
+    <div class="voices-media" aria-hidden="true">
+      <img src="images/students.jpg" alt="">
+    </div>
+    <div class="wrap">
+      <div class="section-head section-head--light">
+        <p class="kicker">From the yard</p>
+        <h2>What students are saying</h2>
+      </div>
+
+      <div class="voice-grid">
+        <blockquote class="voice-card">
+          <p>"I stopped buying provisions from home because CU Mart is cheaper by the time you add transport."</p>
+          <cite>— 300L, Mass Communication</cite>
+        </blockquote>
+        <blockquote class="voice-card">
+          <p>"The exam-week snack packs saved my life during finals. Genuinely open at 11pm when I needed it."</p>
+          <cite>— 200L, Computer Science</cite>
+        </blockquote>
+        <blockquote class="voice-card">
+          <p>"My ID card discount alone has paid for itself. It's the first place I show newcomers on campus."</p>
+          <cite>— 400L, Accounting</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VISIT / CONTACT ================= -->
+  <section class="section section--tint" id="visit">
+    <div class="wrap visit-grid">
+      <div class="visit-info">
+        <p class="kicker">Come through</p>
+        <h2>Find us on campus</h2>
+        <ul class="info-list">
+          <li><strong>Where</strong><span>Caleb University campus, Imota, Lagos — opposite the main gate</span></li>
+          <li><strong>Hours</strong><span>Monday – Sunday, 7:00am – 10:00pm</span></li>
+          <li><strong>Payment</strong><span>Cash, bank transfer and POS card</span></li>
+          <li><strong>Phone</strong><span>0800 000 0000</span></li>
+        </ul>
+      </div>
+
+      <form class="visit-form" id="preorderForm" novalidate>
+        <h3>Pre-order for pickup</h3>
+        <p class="form-lede">Tell us what you need — we'll have it bagged and waiting.</p>
+
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+        <span class="field-error" id="err-name" role="alert"></span>
+
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="080..." required>
+        <span class="field-error" id="err-phone" role="alert"></span>
+
+        <label for="order">What do you need?</label>
+        <textarea id="order" name="order" rows="3" required placeholder="e.g. 2 indomie, 1 sachet water, tomatoes"></textarea>
+        <span class="field-error" id="err-order" role="alert"></span>
+
+        <button type="submit" class="btn btn-primary btn-block">Send pre-order</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">CU</span>
+      <span class="logo-text">Mart<em>.</em></span>
+      <p>The campus supermarket for Caleb University students.</p>
+    </div>
+
+    <div class="footer-cols">
+      <div>
+        <h4>Shop</h4>
+        <a href="#categories">Categories</a>
+        <a href="#deals">This week's deals</a>
+        <a href="#card">Student card</a>
+      </div>
+      <div>
+        <h4>Info</h4>
+        <a href="#why">Why CU Mart</a>
+        <a href="#voices">Student voices</a>
+        <a href="#visit">Visit &amp; hours</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>Made for a coursework assignment — not an official Caleb University service.</p>
+    <button id="backToTop" class="btn btn-ghost btn-sm" aria-label="Back to top">↑ Top</button>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
